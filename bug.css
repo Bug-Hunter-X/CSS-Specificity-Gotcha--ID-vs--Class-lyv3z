@@ -1,0 +1,21 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+div {
+  color: blue;
+}
+
+.special div {
+  color: red;
+}
+
+#very-special .special div {
+  color: green;
+}
+
+#very-special div {
+  color: purple;
+}
+```
+
+The `#very-special div` selector has higher specificity than `.special div`, even though `.special div` appears to be more specific.  This is because the ID selector (`#very-special`) carries significantly more weight than the class selector (`.special`).  The order in which the stylesheets are linked is not relevant here because of the selector's specificity.
