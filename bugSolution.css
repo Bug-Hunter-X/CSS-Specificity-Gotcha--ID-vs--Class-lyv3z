@@ -1,0 +1,20 @@
+While the original code was not technically incorrect, the solution is to restructure the CSS for clarity and to avoid unexpected behavior.  The solution is to be more explicit and use a more specific selector in the stylesheet. For instance:
+
+```css
+div {
+  color: blue;
+}
+
+.special div {
+  color: red;
+}
+
+#very-special .special div {
+  color: green;
+}
+
+#very-special div {
+  color: purple !important; /*Overide the specificity if really needed*/
+}
+```
+This makes the code's behavior more predictable and less susceptible to this issue. Alternatively, one can refactor the HTML to use more appropriate class names so there is less ambiguity in the selectors and specificity is not an issue. 
